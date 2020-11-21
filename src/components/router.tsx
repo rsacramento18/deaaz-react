@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 import Home from '../pages/home';
 import About from '../pages/about';
 import Posts from '../pages/posts';
@@ -15,23 +15,23 @@ const AppRouter = () => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <NavLink activeClassName="active-item" exact to="/">Home</NavLink>
                         </li>
                         <li>
-                            <Link to="/about">Sobre</Link>
+                            <NavLink activeClassName="active-item" exact to="/about">Sobre</NavLink>
                         </li>
                         <li>
-                            <Link to="/posts">Posts</Link>
+                            <NavLink activeClassName="active-item" exact to="/posts">Posts</NavLink>
                         </li>
                         <li>
-                            <Link to="/write">Área Escritor</Link>
+                            <NavLink activeClassName="active-item" exact to="/write">Área Escritor</NavLink>
                         </li>
                     </ul>
                 </nav>
-                <Route path="/" exact component={ Home }></Route>
                 <Route path="/about" exact component={ About }></Route>
                 <Route path="/posts" exact component={ Posts }></Route>
                 <Route path="/posts" exact component={ Writer}></Route>
+                <Route path="/" exact component={ Home }></Route>
             </div>
         </Router>
     );
