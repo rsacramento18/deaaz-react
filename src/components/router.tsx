@@ -15,22 +15,22 @@ const AppRouter = () => {
                 <nav>
                     <ul>
                         <li>
-                            <NavLink activeClassName="active-item" exact to="/">Home</NavLink>
+                            <NavLink activeClassName="active-item" exact to="/">home</NavLink>
                         </li>
                         <li>
-                            <NavLink activeClassName="active-item" exact to="/about">Sobre</NavLink>
+                            <NavLink activeClassName="active-item" exact to="/about">sobre nós</NavLink>
                         </li>
                         <li>
-                            <NavLink activeClassName="active-item" exact to="/posts">Posts</NavLink>
+                            <NavLink activeClassName="active-item" exact to="/posts">posts</NavLink>
                         </li>
                         <li>
-                            <NavLink activeClassName="active-item" exact to="/write">Área Escritor</NavLink>
+                            <NavLink activeClassName="active-item" exact to="/write">área escritor</NavLink>
                         </li>
                     </ul>
                 </nav>
                 <Route path="/about" exact component={ About }></Route>
                 <Route path="/posts" exact component={ Posts }></Route>
-                <Route path="/posts" exact component={ Writer}></Route>
+                <Route path="/write" exact component={ Writer}></Route>
                 <Route path="/" exact component={ Home }></Route>
             </div>
         </Router>
