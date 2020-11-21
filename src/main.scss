@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+body {
+    font-family: Roboto;
+}
+
+// MENU ==========================================
+
+.logo {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Cutive Mono";
+    font-size: 1.2em;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu nav ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+} 
+
+.menu nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.menu nav ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+ 
+
+
