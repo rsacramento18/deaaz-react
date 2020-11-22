@@ -1,44 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: Roboto;
     font-weight: 300;
 }
 
-
 @media (min-width:1910px) {
-    body {
+    .content {
         width: 60%;
-        margin:0 auto;
+        margin: 50px auto;
     }
 }
 
 @media (max-width:1910px) {
-    body {
+    .content {
         width: 90%;
-        margin:0 auto;
+        margin: 50px auto;
     }
+}
+
+.margin-100 {
+    margin-top: 100px;
 }
 
 // MENU ==========================================
 
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .logo {
-    width: 30%;
-    margin: 0 auto;
+    margin: 10px 0;
+    padding: 5px 20px;
     text-align: center;
-    font-family: "Cutive Mono";
-    font-size: 1.6em;
+    color: #303d4d;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.high-title,
+.low-title {
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+
+.low-case-title {
+    font-weight: 300;
+    font-size: 3em;
+}
+
+.lower-title {
+    margin-left: 20px;
+}
+
+.high-case-title {
+    font-weight: 500;
+    font-size: 3.4em;
+    line-height: 10px;
 }
 
 .menu {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .menu nav ul {
     display: block;
-    text-align: center;
-    padding: 0;
-    margin-bottom: 50px;
+    text-align: left;
+    padding: 5px;
+    margin: 5px 0;
 } 
 
 .menu nav ul li {
@@ -48,21 +103,19 @@ body {
 }
 
 .menu nav ul li a {
-    color: black;
+    color: #303d4d;
     text-decoration: none;
-    padding: 2px 4px;
-    border: 2px solid white;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 4px 8px;
 }
 
 .menu nav ul li a:hover {
-    border-bottom: 2px solid black;
-    border-right: 2px solid white;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    color: #dc5263;
 }
 
 .menu nav ul li .active-item {
-    border: 2px solid black;
+    font-weight: 500;
 }
 
 
@@ -124,7 +177,16 @@ body {
 .writer .login div {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    flex-direction: column;
+    margin: 10px 0;
 }
+
+.writer .login div input[type=text],
+.writer .login div input[type=password] {
+    padding: 5px;
+}
+
+
 
 

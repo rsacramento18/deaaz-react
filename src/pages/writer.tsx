@@ -47,11 +47,9 @@ const Writer = () => {
             <div className="login">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div> 
-                        <label>username</label>
                         <input type="text" name="username" ref={register} placeholder="username" />
                     </div>
                     <div> 
-                        <label>password</label>
                         <input type="password" name="password" ref={register} placeholder="password" />
                     </div>
 
