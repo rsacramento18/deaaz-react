@@ -16,7 +16,6 @@ const AppRouter = () => {
         else {
             setSticky(false);
         }
-        console.log('sticky');
     }
 
     useEffect(() => {
