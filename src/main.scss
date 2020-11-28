@@ -231,6 +231,84 @@ header {
 
 }
 
+.writer .settings .alias {
+    border-bottom: 1px solid #ddd;
+}
+
+.writer .settings .alias:first-of-type {
+    border-top: 1px solid #ddd;
+}
+
+.writer .settings .alias .alias-settings {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0 10px;
+}
+
+
+.writer .settings .alias .alias-settings div:not(:last-child) {
+    margin-right: 20px;
+    
+}
+
+.writer .settings .alias .alias-settings div {
+    color: black;
+}
+
+.writer .settings .alias .alias-settings div.alias-letter {
+    width: 5%;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.writer .settings .alias .alias-settings .alias-color {
+    width: 6%;
+    height: 19px;
+    background-color: black;
+    cursor: pointer;
+}
+
+// .writer .colorPicker {
+//     position: absolute;
+//     z-index: 1000;
+// }
+
+.writer .settings .alias .alias-settings .alias-description {
+    width: 89%;
+    height: 19px;
+    overflow-y: hidden;
+}
+
+.writer .settings .alias .alias-settings .alias-options {
+    width: 10%;
+    text-align: right;
+}
+
+.writer .settings .alias .alias-settings .alias-options span {
+    margin: 0 5px;
+}
+
+
+.writer .settings .alias .alias-settings .alias-options span.moreBt {
+    color: #303d4d;
+    cursor: pointer;
+}
+
+.writer .settings .alias .alias-settings .alias-options span.deleteBt {
+    color: #dc5263;
+    cursor: pointer;
+}
+
+
+.writer .settings .alias .alias-posts {
+    display: none;
+}
+
+
+
+
 
 
 
