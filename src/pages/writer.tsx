@@ -15,8 +15,38 @@ const Writer = () => {
     if ( loggedIn ) {
         return (
             <div className="writer">
-                <h1>área de escritor</h1>
+                <div className="section-title">
+                    <h1>área de escritor</h1>
+                </div>
                 <div className="settings">
+                    <div className="alias">
+                        <div className="alias-letter">
+                            <span>L</span>
+                        </div>
+                        <div className="alias-description">
+                            <span>Some description for the alias</span>
+                        </div>
+                        <div className="alias-posts">
+                            <input type="button" value="+"/>
+                        </div>
+                        <div className="alias-delete">
+                            <input type="button" value="delete"/>
+                        </div>
+                    </div>
+                    <div className="alias-posts">
+                        <div className="alias-post-title">
+                            <span>Some post title</span>
+                        </div>
+                        <div className="alias-date">
+                            <span>18/05/2020</span>
+                        </div>
+                        <div className="alias-posts">
+                            <input type="button" value="+"/>
+                        </div>
+                        <div className="alias-delete">
+                            <input type="button" value="delete"/>
+                        </div>
+                    </div>
                     <div className="user">
                         <div>
                             <label>Nome</label>
@@ -43,7 +73,9 @@ const Writer = () => {
     }
     return (
         <div className="writer">
-            <h1>área de escritor</h1>
+            <div className="section-title">
+                <h1>área de escritor</h1>
+            </div>
             <div className="login">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div> 
@@ -53,7 +85,7 @@ const Writer = () => {
                         <input type="password" name="password" ref={register} placeholder="password" />
                     </div>
 
-                    <input type="submit" />
+                    <input type="submit" value="entrar"/>
                 </form>
             </div>
         </div>

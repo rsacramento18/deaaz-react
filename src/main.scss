@@ -27,6 +27,12 @@ body {
     margin-top: 100px;
 }
 
+.section-title {
+    text-align: center;
+    color: #303d4d;
+    margin-bottom: 100px;
+}
+
 // MENU ==========================================
 
 
@@ -118,6 +124,20 @@ header {
     font-weight: 500;
 }
 
+// ABOUT =======================
+
+.about {
+    width:60%;
+    margin: 0 auto;
+}
+
+// POSTS =======================
+
+.posts {
+    width:60%;
+    margin: 0 auto;
+}
+
 
 // POST ========================
 
@@ -158,8 +178,9 @@ header {
 }
 
 .post .content {
-    text-justify: justify;
+    text-align: justify;
     font-size: 1em;
+    width: 100%;
 }
 
 .post .date {
@@ -167,6 +188,11 @@ header {
 }
 
 // writer =====================================
+
+.writer {
+    width:60%;
+    margin: 0 auto;
+}
 
 .writer .login {
     display: flex;
@@ -185,7 +211,26 @@ header {
 .writer .login div input[type=text],
 .writer .login div input[type=password] {
     padding: 5px;
+    height: 20px;
 }
+
+.writer .login input[type=submit] {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    background-color: #303d4d;
+    color: white;
+    border-radius: 3%;
+    outline: none;
+    border: none;
+}
+
+.writer .login input[type=submit]:hover {
+    background-color: #dc5263;
+    color: white;
+
+}
+
 
 
 
