@@ -14,6 +14,21 @@ body {
         width: 60%;
         margin: 50px auto;
     }
+
+    .about {
+        width:60%;
+        margin: 0 auto;
+    }
+
+    .posts {
+        width:60%;
+        margin: 0 auto;
+    }
+
+    .writer {
+        width:60%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width:1910px) {
@@ -31,6 +46,11 @@ body {
     text-align: center;
     color: #303d4d;
     margin-bottom: 100px;
+}
+
+.section-subtitle {
+    text-align: left;
+    color: #303d4d;
 }
 
 // MENU ==========================================
@@ -124,21 +144,6 @@ header {
     font-weight: 500;
 }
 
-// ABOUT =======================
-
-.about {
-    width:60%;
-    margin: 0 auto;
-}
-
-// POSTS =======================
-
-.posts {
-    width:60%;
-    margin: 0 auto;
-}
-
-
 // POST ========================
 
 .post {
@@ -189,10 +194,6 @@ header {
 
 // writer =====================================
 
-.writer {
-    width:60%;
-    margin: 0 auto;
-}
 
 .writer .login {
     display: flex;
@@ -231,15 +232,17 @@ header {
 
 }
 
-.writer .settings .alias {
+// ALIAS COMPONENT ============================
+
+.alias {
     border-bottom: 1px solid #ddd;
 }
 
-.writer .settings .alias:first-of-type {
+.alias:first-of-type {
     border-top: 1px solid #ddd;
 }
 
-.writer .settings .alias .alias-settings {
+.alias .alias-settings {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -248,63 +251,125 @@ header {
 }
 
 
-.writer .settings .alias .alias-settings div:not(:last-child) {
+.alias .alias-settings div:not(:last-child) {
     margin-right: 20px;
     
 }
 
-.writer .settings .alias .alias-settings div {
+.alias .alias-settings div {
     color: black;
 }
 
-.writer .settings .alias .alias-settings div.alias-letter {
+.alias .alias-settings div.alias-letter {
     width: 5%;
     text-align: center;
     margin-right: 10px;
+    font-weight: 500;
 }
 
-.writer .settings .alias .alias-settings .alias-color {
+.alias .alias-settings .alias-color {
     width: 6%;
     height: 19px;
     background-color: black;
     cursor: pointer;
 }
 
-// .writer .colorPicker {
-//     position: absolute;
-//     z-index: 1000;
-// }
-
-.writer .settings .alias .alias-settings .alias-description {
+.alias .alias-settings .alias-description {
     width: 89%;
     height: 19px;
-    overflow-y: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.writer .settings .alias .alias-settings .alias-options {
+.alias .alias-settings .alias-options {
     width: 10%;
     text-align: right;
 }
 
-.writer .settings .alias .alias-settings .alias-options span {
+.alias .alias-settings .alias-options span {
     margin: 0 5px;
 }
 
 
-.writer .settings .alias .alias-settings .alias-options span.moreBt {
+.alias .alias-settings .alias-options span.moreBt,
+.alias .alias-settings .alias-options span.minusBt {
     color: #303d4d;
     cursor: pointer;
 }
 
-.writer .settings .alias .alias-settings .alias-options span.deleteBt {
+.alias .alias-settings .alias-options span.deleteBt {
     color: #dc5263;
     cursor: pointer;
 }
 
 
-.writer .settings .alias .alias-posts {
-    display: none;
+
+.post-edit .post {
+    display:flex;
+    justify-content: left;
+    align-items: stretch;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
 }
+
+.post-edit .post:hover {
+    background-color: #ddd;
+}
+
+.post-edit .post .post-info {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 20%;
+    max-width: 20%;
+    min-height: 140px;
+    max-height: 140px;
+    padding: 20px;
+}
+
+.post-edit .post .post-info span  {
+    margin: 2px 0;
+}
+
+.post-edit .post .post-info .post-info-subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-edit .post .post-content{
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 140px;
+    max-height: 140px;
+    margin: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// USER ========================
+
+.user {
+    display: flex;
+    align-items: left;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.user label {
+    color: #303d4d;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+
+
+
 
 
 

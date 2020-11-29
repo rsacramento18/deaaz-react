@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
+import Alias from '../components/alias';
 import { useForm } from "react-hook-form";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { SketchPicker } from "react-color";
+// import { SketchPicker } from "react-color";
 
 const Writer = () => {
 
     const { register, handleSubmit } = useForm();
 
     const [loggedIn, setLoggedIn ] = useState(true);
-
-    const [colorPicker, setColorPicker] = useState("none");
-    const [posts, setPosts] = useState("none");
-
-    const plusLogo = <FontAwesomeIcon icon={faPlusCircle} />
-    const deleteLogo = <FontAwesomeIcon icon={faTrashAlt} />
 
     const user: any = {
         name: 'Ricardo Sacramento',
@@ -27,8 +20,8 @@ const Writer = () => {
                 posts: [
                     {
                         title: 'Some Post Title',
-                        subtitle: 'Some post subtitle',
-                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                        subtitle: 'Some post subtitle and Some post subtitle and Some post subtitle',
+                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
                         date: '10/08/2020',
                     },
                     {
@@ -78,75 +71,31 @@ const Writer = () => {
         setLoggedIn(true);
     }
 
-
-    const toggleShowColor = () => {
-        if (colorPicker === "none") {
-            setColorPicker("block");
-        }
-        else {
-            setColorPicker("none")
-        }
-    }
-    
-    const showPosts = (index : number) => {
-        if (colorPicker === "none") {
-            setColorPicker("block");
-        }
-        else {
-            setColorPicker("none")
-        }
-    }
-
     if ( loggedIn ) {
         return (
             <div className="writer">
                 <div className="section-title">
                     <h1>área de escritor</h1>
                 </div>
-
-                {/* <div className="colorPicker" style={{display: colorPicker}}> */}
-                {/*     <SketchPicker /> */}
-                {/* </div> */}
+                <div className="section-subtitle">
+                    <h2>pseudónimos</h2>
+                </div>
                 <div className="settings">
                     { user.alias.map((alias: any, index: number) => {
                         return (
-                            <div key={index} className="alias">
-                                <div className="alias-settings">
-                                    <div className="alias-letter">
-                                        <span>{alias.letter}</span>
-                                    </div>
-                                    <div className="alias-color" onClick={toggleShowColor} style={{backgroundColor: alias.color}}>
-                                    </div>
-                                    <div className="alias-description">
-                                        <span>{alias.description}</span>
-                                    </div>
-                                    <div className="alias-options">
-                                        <span className="moreBt" onClick={() => showPosts(index)}>{ plusLogo }</span>
-                                        <span className="deleteBt">{ deleteLogo }</span>
-                                    </div>
-                                </div>
-                                <div key={index} className="alias-posts">
-                                    { alias.posts.map((post: any, index: number) => {
-                                        return (
-                                            <div key={index} className="alias-post">
-                                                <div className="alias-post-info">
-                                                    <p className="alias-post-info-title">{ post.title }</p>
-                                                    <p className="alias-post-info-subtitle">{ post.subtitle }</p>
-                                                    <p className="alias-post-info-date">{ post.date }</p>
-                                                </div>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
+                            <Alias key={index} alias={alias} />
                         )
                     })}
                     <div className="user">
+                        <div className="section-subtitle">
+                            <h2>detalhes de utilizador</h2>
+                        </div>
                         <div className="user-name">
+                            <label>username</label>
                             <span>{ user.name }</span>
                         </div>
                         <div className="user-email">
+                            <label>email</label>
                             <span>{ user.email }</span>
                         </div>
                     </div>
