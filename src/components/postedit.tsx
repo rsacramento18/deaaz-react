@@ -33,14 +33,14 @@ const PostEdit = (props : any) => {
                             <h1>escrever</h1>
                         </div>
                         <Editor
-                            apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon"
+                            apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon" 
                             initialValue="<p>This is the initial content of the editor</p>"
                             init={{
                                 height: 500,
                                 menubar: false,
                                 plugins: [
                                     'advlist autolink lists link image charmap print preview anchor',
-                                    'searchreplace visualblocks code fullscreen',
+                                    'searchreplace visualblocks code',
                                     'insertdatetime media table paste code help wordcount'
                                 ],
                             toolbar:
