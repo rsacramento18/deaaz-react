@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faSave, faTimes } from '@fortawesome/free-solid-svg-icons';
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import FroalaEditorComponent from 'react-froala-wysiwyg';
+import { Editor } from '@tinymce/tinymce-react';
 
 const PostEdit = (props : any) => {
 
@@ -15,6 +13,10 @@ const PostEdit = (props : any) => {
         setTopProperty(window.scrollY);
 
     }
+
+    const handleEditorChange = (content :any, editor : any) => {
+     console.log('Content was updated:', content);
+   }
 
     return (
         <div className="post-edit">
@@ -30,7 +32,24 @@ const PostEdit = (props : any) => {
                         <div className="section-subtitle">
                             <h1>escrever</h1>
                         </div>
-                        <FroalaEditorComponent tag='textarea'/>
+                        <Editor
+                            apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon"
+                            initialValue="<p>This is the initial content of the editor</p>"
+                            init={{
+                                height: 500,
+                                menubar: false,
+                                plugins: [
+                                    'advlist autolink lists link image charmap print preview anchor',
+                                    'searchreplace visualblocks code fullscreen',
+                                    'insertdatetime media table paste code help wordcount'
+                                ],
+                            toolbar:
+                                'undo redo | formatselect | bold italic backcolor | \
+                                alignleft aligncenter alignright alignjustify | \
+                                bullist numlist outdent indent | removeformat | help'
+                            }}
+                            onEditorChange={handleEditorChange}
+                        />
                         <div className="popup-buttons">
                             <button className="saveBt">guardar
                                 <FontAwesomeIcon className="icon" icon={faSave} />
