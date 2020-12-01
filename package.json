@@ -20,6 +20,7 @@
     "react": "^16.13.1",
     "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
+    "react-froala-wysiwyg": "^3.2.3",
     "react-hook-form": "^6.11.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",

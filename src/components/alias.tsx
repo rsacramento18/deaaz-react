@@ -9,7 +9,7 @@ const Alias = (props: any) => {
     const minusLogo = <FontAwesomeIcon icon={faMinusCircle} />
     const deleteLogo = <FontAwesomeIcon icon={faTrashAlt} />
 
-    const [isHidden, setIsHidden] = useState(false);
+    const [isHidden, setIsHidden] = useState(true);
 
     const toggleHidden = () => {
         setIsHidden(!isHidden);
