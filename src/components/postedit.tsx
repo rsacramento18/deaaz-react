@@ -5,27 +5,48 @@ import { Editor } from '@tinymce/tinymce-react';
 
 const PostEdit = (props : any) => {
 
-    const [escreverHidden, setEscreverHidden] = useState(true);
+    const [writeHidden, setWriteHidden] = useState(true);
     const [topProperty, setTopProperty] = useState(0);
 
-    const toggleEscreverHidden = () => {
-        setEscreverHidden(!escreverHidden);
-        setTopProperty(window.scrollY);
+    const [postContent, setPostContent] = useState("");
+    const [postIndex, setPostIndex] = useState(-1);
 
+    const toggleWriteHidden = () => {
+        setWriteHidden(!writeHidden);
+        setTopProperty(window.scrollY);
     }
 
+    const writeNewPost = () => {
+        setPostContent("");
+        setPostIndex(-1);
+        toggleWriteHidden();
+    }
+
+    const editPost = (postIndex : any) => {
+        setPostContent(props.posts[postIndex].content);
+        setPostIndex(postIndex);
+        toggleWriteHidden();
+    }
+
+    const savePost = () => {
+        console.log("Post saved");
+        if (postIndex === -1) {
+        }
+    }
+
+
     const handleEditorChange = (content :any, editor : any) => {
-     console.log('Content was updated:', content);
+     setPostContent(content);
    }
 
     return (
         <div className="post-edit">
             <div className="post-options">
-                <button className="escreverBt" onClick={toggleEscreverHidden}>escrever 
+                <button className="escreverBt" onClick={writeNewPost}>escrever 
                     <FontAwesomeIcon className="icon" icon={faPlusCircle} />
                 </button>
             </div>
-            { escreverHidden === false &&
+            { writeHidden === false &&
             <div className="post-create" style={{top: topProperty}}>
                 <div className="popup-wrapper">
                     <div className="create-section">
@@ -34,7 +55,7 @@ const PostEdit = (props : any) => {
                         </div>
                         <Editor
                             apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon" 
-                            initialValue="<p>This is the initial content of the editor</p>"
+                            initialValue={ postContent }
                             init={{
                                 height: 500,
                                 menubar: false,
@@ -48,14 +69,14 @@ const PostEdit = (props : any) => {
                                 alignleft aligncenter alignright alignjustify | \
                                 bullist numlist outdent indent | removeformat | help'
                             }}
-                            onEditorChange={handleEditorChange}
+                            onEditorChange={ handleEditorChange }
                         />
                         <div className="popup-buttons">
-                            <button className="saveBt">guardar
-                                <FontAwesomeIcon className="icon" icon={faSave} />
+                            <button className="saveBt" onClick={ savePost }>guardar
+                                <FontAwesomeIcon className="icon" icon={ faSave } />
                             </button>
-                            <button className="closeBt" onClick={toggleEscreverHidden}>fechar
-                                <FontAwesomeIcon className="icon" icon={faTimes} />
+                            <button className="closeBt" onClick={ toggleWriteHidden }>fechar
+                                <FontAwesomeIcon className="icon" icon={ faTimes } />
                             </button>
                         </div>
                     </div>
@@ -65,7 +86,7 @@ const PostEdit = (props : any) => {
             { props.posts.map((post: any, index: number) => {
                 return (
                     <div key={index}>
-                        <div  className="post">
+                        <div  className="post" onClick={() => editPost(index)}>
                             <div className="post-info">
                                 <span className="post-info-title">{ post.title }</span>
                                 <span className="post-info-subtitle">{ post.subtitle }</span>
