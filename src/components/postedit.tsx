@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faSave, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Editor } from '@tinymce/tinymce-react';
@@ -6,38 +7,55 @@ import { Editor } from '@tinymce/tinymce-react';
 const PostEdit = (props : any) => {
 
     const [writeHidden, setWriteHidden] = useState(true);
-    const [topProperty, setTopProperty] = useState(0);
 
-    const [postContent, setPostContent] = useState("");
-    const [postIndex, setPostIndex] = useState(-1);
+    const { register, handleSubmit } = useForm();
+
+    const [post, setPost] = useState({id: 0, title: "", subtitle: "", content: ""});
 
     const toggleWriteHidden = () => {
         setWriteHidden(!writeHidden);
-        setTopProperty(window.scrollY);
     }
 
     const writeNewPost = () => {
-        setPostContent("");
-        setPostIndex(-1);
+        setPost({id: 0, title: "", subtitle: "", content: ""});
         toggleWriteHidden();
     }
 
     const editPost = (postIndex : any) => {
-        setPostContent(props.posts[postIndex].content);
-        setPostIndex(postIndex);
+        setPost(props.posts[postIndex]);
         toggleWriteHidden();
     }
 
-    const savePost = () => {
+    const changeTitle = (title: any) => {
+        var postSave = post;
+        postSave.title = title;
+        setPost(postSave);
+    }
+
+    const changeSubtitle = (subtitle: any) => {
+        var postSave = post;
+        postSave.subtitle = subtitle;
+        setPost(postSave);
+        console.log(post);
+    }
+
+
+    const savePost = (data: any) => {
+        var postSave = post;
+        postSave.title = data.title;
+        postSave.subtitle = data.subtitle;
+        setPost(postSave);
         console.log("Post saved");
-        if (postIndex === -1) {
-        }
+        console.log(post);
     }
 
 
     const handleEditorChange = (content :any, editor : any) => {
-     setPostContent(content);
-   }
+        var postToEdit = post;
+        postToEdit.content = content;
+        setPost(postToEdit);
+    }
+
 
     return (
         <div className="post-edit">
@@ -47,38 +65,48 @@ const PostEdit = (props : any) => {
                 </button>
             </div>
             { writeHidden === false &&
-            <div className="post-create" style={{top: topProperty}}>
+            <div className="post-create">
                 <div className="popup-wrapper">
                     <div className="create-section">
                         <div className="section-subtitle">
                             <h1>escrever</h1>
                         </div>
-                        <Editor
-                            apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon" 
-                            initialValue={ postContent }
-                            init={{
-                                height: 500,
-                                menubar: false,
-                                plugins: [
-                                    'advlist autolink lists link image charmap print preview anchor',
-                                    'searchreplace visualblocks code',
-                                    'insertdatetime media table paste code help wordcount'
-                                ],
-                            toolbar:
-                                'undo redo | formatselect | bold italic backcolor | \
-                                alignleft aligncenter alignright alignjustify | \
-                                bullist numlist outdent indent | removeformat | help'
-                            }}
-                            onEditorChange={ handleEditorChange }
-                        />
-                        <div className="popup-buttons">
-                            <button className="saveBt" onClick={ savePost }>guardar
-                                <FontAwesomeIcon className="icon" icon={ faSave } />
-                            </button>
-                            <button className="closeBt" onClick={ toggleWriteHidden }>fechar
-                                <FontAwesomeIcon className="icon" icon={ faTimes } />
-                            </button>
-                        </div>
+                        <form onSubmit={handleSubmit(savePost)}>
+                            <div className="titles-form">
+                                <div>
+                                    <input type="text" name="title" ref={register} placeholder="title" onChange={(e) => changeTitle(e.target.value)} defaultValue={post.title}/>
+                                </div>
+                                <div>
+                                    <input type="text" name="subtitle" ref={register} placeholder="subtitle" onChange={(e) => changeSubtitle(e.target.value)} defaultValue={post.subtitle}/>
+                                </div>
+                            </div>
+                            <Editor
+                                apiKey="adxsjb6lizs93r0q63jf1fp0glkkgwpslgia6bztougfcyon" 
+                                initialValue={ post.content }
+                                init={{
+                                    height: 500,
+                                    menubar: false,
+                                    plugins: [
+                                        'advlist autolink lists link image charmap print preview anchor',
+                                        'searchreplace visualblocks code',
+                                        'insertdatetime media table paste code help wordcount'
+                                    ],
+                                toolbar:
+                                    'undo redo | formatselect | bold italic backcolor | \
+                                    alignleft aligncenter alignright alignjustify | \
+                                    bullist numlist outdent indent | removeformat | help'
+                                }}
+                                onEditorChange={ handleEditorChange }
+                            />
+                            <div className="popup-buttons">
+                                <button type="submit" className="saveBt">guardar
+                                    <FontAwesomeIcon className="icon" icon={ faSave } />
+                                </button>
+                                <button className="closeBt" onClick={ toggleWriteHidden }>fechar
+                                    <FontAwesomeIcon className="icon" icon={ faTimes } />
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
