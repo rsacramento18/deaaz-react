@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
+import DOMPurify from 'dompurify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faSave, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Editor } from '@tinymce/tinymce-react';
@@ -120,8 +121,7 @@ const PostEdit = (props : any) => {
                                 <span className="post-info-subtitle">{ post.subtitle }</span>
                                 <span className="post-info-date">{ post.date }</span>
                             </div>
-                            <div className="post-content">
-                                <span>{ post.content }</span>
+                            <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.content)}}>
                             </div>
                         </div>
                     </div>
