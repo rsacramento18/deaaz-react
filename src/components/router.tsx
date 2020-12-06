@@ -35,12 +35,12 @@ const AppRouter = () => {
             <header>
                 <div className="logo">
                     <div className="high-title">
-                        <span className="low-case-title">de</span>
-                        <span className="high-case-title">A</span>
+                        <div className="low-case-title">de</div>
+                        <div className="high-case-title">A</div>
                     </div>
                     <div className="low-title">
-                        <span className="low-case-title lower-title">a</span>
-                        <span className="high-case-title">Z</span>
+                        <div className="low-case-title lower-title">a</div>
+                        <div className="high-case-title">Z</div>
                     </div>
                 </div>
                 <div className={navbarClasses.join(" ")}>
