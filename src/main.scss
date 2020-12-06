@@ -69,14 +69,13 @@ header {
 
 .logo {
     margin: 50px 0;
-    // padding: 5px 20px;
     text-align: center;
     color: #303d4d;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     flex-direction: column;
-    border: #303d4d solid 2px;
+    // border: #303d4d solid 2px;
 
 }
 
@@ -87,14 +86,17 @@ header {
     flex-direction: row;
 }
 
+.logo .high-title {
+    border-bottom: #303d4d solid 1px;
+}
+
 .logo .high-title > div,
 .logo .low-title > div {
-    border: #303d4d solid 1px;
     width: 70px;
     height: 70px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    // margin: 2px;
 }
 
 
@@ -107,7 +109,28 @@ header {
     font-weight: 500;
     font-size: 3.4em;
     line-height: 10px;
-    // color: #dc5263;
+    border: #303d4d solid 2px;
+    align-items: center;
+}
+
+.low-letter {
+    align-items: flex-end;
+}
+
+.high-letter {
+    align-items: flex-start;
+}
+
+.height-line {
+    line-height: 30px;
+}
+
+.border-bottom {
+    border-bottom: 1px;
+}
+
+.border-top{
+    border-top: 1px;
 }
 
 .menu {
