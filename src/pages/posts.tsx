@@ -8,10 +8,12 @@ const Posts = () => {
       <div className="section-title">
         <h1>posts</h1>
       </div>
-      <Post/> 
-      <Post/> 
-      <Post/> 
-      <Post/> 
+      <div className="posts-content">
+        <Post/> 
+        <Post/> 
+        <Post/> 
+        <Post/> 
+      </div>
     </div>
   );
 }

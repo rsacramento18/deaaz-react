@@ -7,6 +7,7 @@ html {
 body {
     font-family: Lato;
     font-weight: 300;
+    background-color: #EEF2F7;
 }
 
 button {
@@ -25,23 +26,24 @@ button > svg {
     margin-left: 10px;
 }
 
-@media (min-width:1910px) {
-    .content {
-        width: 40%;
-        margin: 50px auto;
-    }
-}
 
-@media (max-width:1910px) {
-    .content {
-        width: 60%;
-        margin: 50px auto;
-    }
-}
+// @media (min-width:1910px) {
+//     .content {
+//         width: 40%;
+//         margin: 50px auto;
+//     }
+// }
 
-.margin-100 {
-    margin-top: 100px;
-}
+// @media (max-width:1910px) {
+//     .content {
+//         width: 60%;
+//         margin: 50px auto;
+//     }
+// }
+
+// .margin-100 {
+//     margin-top: 100px;
+// }
 
 .section-title {
     text-align: center;
@@ -61,85 +63,29 @@ button > svg {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    background-color: #303d4d;
+    color: white;
 }
 
 
 .logo {
-    margin: 50px 0;
-    text-align: center;
-    color: #303d4d;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: left;
     align-items: baseline;
-    flex-direction: column;
-    // border: #303d4d solid 2px;
-
-}
-
-.logo .high-title, 
-.logo .low-title {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.logo .high-title {
-    border-bottom: #303d4d solid 1px;
-}
-
-.logo .high-title > div,
-.logo .low-title > div {
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    // margin: 2px;
-}
-
-
-.low-case-title {
     font-weight: 300;
-    font-size: 2.5em;
-}
+    font-size: 3em;
+    width: 50%;
+    margin: 20px 40px;
 
-.high-case-title {
-    font-weight: 500;
-    font-size: 3.4em;
-    line-height: 10px;
-    border: #303d4d solid 2px;
-    align-items: center;
-}
-
-.low-letter {
-    align-items: flex-end;
-}
-
-.high-letter {
-    align-items: flex-start;
-}
-
-.height-line {
-    line-height: 30px;
-}
-
-.border-bottom {
-    border-bottom: 1px;
-}
-
-.border-top{
-    border-top: 1px;
 }
 
 .menu {
     padding: 10px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: white;
+    justify-content:flex-end;
+    width: 50%;
 }
 
 .sticky {
@@ -162,11 +108,11 @@ header {
 }
 
 .menu nav ul li a {
-    color: #303d4d;
+    color: white;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1em;
-    padding: 4px 8px;
+    font-size: 1.2em;
+    padding: 4px 4px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -179,57 +125,93 @@ header {
     font-weight: 500;
 }
 
+// POSTS ========================
+
+.posts .posts-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.posts .posts-content > div {
+    min-width: 40%;
+    max-width: 40%;
+    min-height: 400px;
+    max-height: 400px;
+}
+
 // POST ========================
 
 .post {
-    margin: 50px 0;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: white;
+
 }
 
-.post .user {
+.post .front {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height:100%;
 }
 
-.post .user .user-box {
-    width: 90px;
-    height: 90px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.2em;
-    background-color: #d79921;
-    color: white;
-    border-radius: 50%;
-}
-
-.post .title {
-    text-align: center;
-    font-weight: 500;
-    font-size: 2em;
-    text-transform: uppercase;
-    margin: 50px 0;
-}
-
-.post .subtitle {
-    font-weight: 500;
-    font-size: 1.7em;
-    margin: 20px 0;
-}
-
-.post .content {
-    text-align: justify;
-    font-size: 1.3em;
-    line-height: 25px;
+.post .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
     width: 100%;
-    margin: 20px 0;
+    height:100%;
+    z-index: 1000;
 }
 
-.post .date {
-    text-align: center;
-    font-size: 1.2em;
-}
+// .post .user {
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .post .user .user-box {
+//     width: 90px;
+//     height: 90px;
+//     display:flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 3.2em;
+//     background-color: #d79921;
+//     color: white;
+//     border-radius: 50%;
+// }
+
+// .post .title {
+//     text-align: center;
+//     font-weight: 500;
+//     font-size: 2em;
+//     text-transform: uppercase;
+//     margin: 50px 0;
+// }
+
+// .post .subtitle {
+//     font-weight: 500;
+//     font-size: 1.7em;
+//     margin: 20px 0;
+// }
+
+// .post .content {
+//     text-align: justify;
+//     font-size: 1.3em;
+//     line-height: 25px;
+//     width: 100%;
+//     margin: 20px 0;
+// }
+
+// .post .date {
+//     text-align: center;
+//     font-size: 1.2em;
+// }
 
 // writer =====================================
 
