@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 
 html {
     overflow-y: scroll;
@@ -7,7 +8,6 @@ html {
 body {
     font-family: Lato;
     font-weight: 300;
-    background-color: #EEF2F7;
 }
 
 button {
@@ -27,30 +27,12 @@ button > svg {
 }
 
 
-// @media (min-width:1910px) {
-//     .content {
-//         width: 40%;
-//         margin: 50px auto;
-//     }
-// }
-
-// @media (max-width:1910px) {
-//     .content {
-//         width: 60%;
-//         margin: 50px auto;
-//     }
-// }
-
-// .margin-100 {
-//     margin-top: 100px;
-// }
-
-.section-title {
+.section-title  h1{
     text-align: center;
-    color: #303d4d;
+    color: black;
     margin-bottom: 100px;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .section-subtitle {
@@ -65,8 +47,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #303d4d;
-    color: white;
+    // background-color: #303d4d;
+    background-color: white;
 }
 
 
@@ -75,6 +57,7 @@ header {
     align-items: baseline;
     font-weight: 300;
     font-size: 3em;
+    font-family: 'Waiting for the Sunrise', cursive;
     width: 50%;
     margin: 20px 40px;
 
@@ -108,12 +91,12 @@ header {
 }
 
 .menu nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.2em;
     padding: 4px 4px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 2px;
 }
 
@@ -121,97 +104,80 @@ header {
     color: #dc5263;
 }
 
-.menu nav ul li .active-item {
-    font-weight: 500;
-}
-
 // POSTS ========================
 
 .posts .posts-content {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-}
-
-.posts .posts-content > div {
-    min-width: 40%;
-    max-width: 40%;
-    min-height: 400px;
-    max-height: 400px;
+    align-content: center;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
 }
 
 // POST ========================
 
 .post {
-    margin: 20px 20px;
-    padding: 20px 20px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 50px;
+}
+
+.post .post-header {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    height: 100px;
+    border-bottom: solid 2px black;
+}
+
+.post .post-header .user {
+    padding: 10px;
+}
+
+.post .post-header .user .user-box {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     border-radius: 5px;
-    background-color: white;
-
 }
 
-.post .front {
-    width: 100%;
-    height:100%;
+.post .post-header .user .user-box .letter {
+    font-size: 2.5em;
+    align-self: center;
 }
 
-.post .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: white;
-    width: 100%;
-    height:100%;
-    z-index: 1000;
+.post .post-header .post-title {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 4;
+    padding: 10px;
 }
 
-// .post .user {
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+.post .post-header .post-title .title {
+    margin: 0;
+    font-size: 2em;
+}
 
-// .post .user .user-box {
-//     width: 90px;
-//     height: 90px;
-//     display:flex;
-//     align-items: center;
-//     justify-content: center;
-//     font-size: 3.2em;
-//     background-color: #d79921;
-//     color: white;
-//     border-radius: 50%;
-// }
+.post .post-header .post-title .subtitle {
+    margin: 0;
+    font-weight: 300;
+}
 
-// .post .title {
-//     text-align: center;
-//     font-weight: 500;
-//     font-size: 2em;
-//     text-transform: uppercase;
-//     margin: 50px 0;
-// }
+.post .post-date {
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-top: solid 2px black;
+}
 
-// .post .subtitle {
-//     font-weight: 500;
-//     font-size: 1.7em;
-//     margin: 20px 0;
-// }
+.post .post-date .date-weight {
+    font-weight: 400;
+}
 
-// .post .content {
-//     text-align: justify;
-//     font-size: 1.3em;
-//     line-height: 25px;
-//     width: 100%;
-//     margin: 20px 0;
-// }
-
-// .post .date {
-//     text-align: center;
-//     font-size: 1.2em;
-// }
 
 // writer =====================================
 

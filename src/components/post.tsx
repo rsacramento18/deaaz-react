@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DOMPurify from 'dompurify';
 
 const Post = () =>  {
   
-  const [hover, setHover] = useState(false);
 
   const post: any = {
     id:1,
@@ -16,24 +15,25 @@ const Post = () =>  {
   }
 
   return ( 
-    <div className="post" 
-      onMouseEnter={() => setHover(true)} 
-      onMouseLeave={() => setHover(false)}>
-      <div className="front">
+    <div className="post" >
+      <div className="post-header" >
         <div className="user">
-          <div className="user-box">
-            <span>{post.letter}</span>
+          <div className="user-box" style={{backgroundColor: post.color}}>
+            <div className="letter">{post.letter}</div>
           </div> 
         </div>
-        <h2 className="title">{post.title}</h2>
-        <p className="date">{post.date}</p>
-      </div>
-      { hover && (
-      <div className="back">
-        <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.content)}}>
+        <div className="post-title">
+          <h2 className="title">{post.title}</h2>
+          <h3 className="subtitle">{post.subtitle}</h3>
         </div>
       </div>
-      )}
+      <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.content)}}></div>
+      <div className="post-date">
+        <div className="date">
+          <span>escrito a </span>
+          <span className="date-weight">{post.date}</span>
+        </div>
+      </div>
     </div>
   );
 }
