@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 
 html {
     overflow-y: scroll;
@@ -57,7 +57,6 @@ header {
     align-items: baseline;
     font-weight: 300;
     font-size: 3em;
-    font-family: 'Waiting for the Sunrise', cursive;
     width: 50%;
     margin: 20px 40px;
 
@@ -90,7 +89,7 @@ header {
     padding: 0 20px;
 }
 
-.menu nav ul li a {
+.menu nav ul li a, .menu nav ul li span {
     color: black;
     text-decoration: none;
     font-weight: 300;
@@ -102,6 +101,26 @@ header {
 
 .menu nav ul li a:hover {
     color: #dc5263;
+}
+
+.menu nav ul li ul {
+    position: absolute;
+    display: flex;
+    align-content: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu nav ul li:hover ul {
+    display: flex;
+}
+
+.menu nav ul li ul {
+    padding: 0;
+}
+
+.menu nav ul li ul li {
+    padding: 0;
 }
 
 // POSTS ========================

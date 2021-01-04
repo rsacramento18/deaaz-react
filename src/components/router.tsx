@@ -6,6 +6,22 @@ import Writer from '../pages/writer';
 
 const AppRouter = () => {
 
+    const categories = ['romance', 'poemas', 'curtas', 'crónica', 'notícia'];
+    const writers = [
+        {
+            letter: 'A',
+            color: '#fabd2f',
+        },
+        {
+            letter: 'M',
+            color: 'blue',
+        },
+        {
+            letter: 'O',
+            color: 'red',
+        },
+    ];
+
     return (
         <Router>
             <header>
@@ -17,6 +33,30 @@ const AppRouter = () => {
                         <ul>
                             <li>
                                 <NavLink activeClassName="active-item" exact to="/">home</NavLink>
+                            </li>
+                            <li><span>escritores</span>
+                                <ul>
+                                    { writers.map((writer: any, index: number) => {
+                                        return (
+                                            <li>
+                                                <div style={{backgroundColor: writer.color}}>
+                                                    <NavLink activeClassName="active-item" exact to={"writer/" + writer.letter}>{writer.letter}</NavLink>
+                                                </div>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+
+                            </li>
+                            <li><span>categorias</span>
+                                <ul>
+                                    { categories.map((category: any, index: number) => {
+                                        return (
+                                            <li><NavLink activeClassName="active-item" exact to={"categories/" + category }>{category}</NavLink></li>
+                                        )
+                                    })}
+                                </ul>
+
                             </li>
                             <li>
                                 <NavLink activeClassName="active-item" exact to="/about">sobre nós</NavLink>
