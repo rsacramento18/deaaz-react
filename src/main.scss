@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 
 html {
     overflow-y: scroll;
@@ -86,7 +85,8 @@ header {
 .menu nav ul li {
     display: inline-block;
     list-style: none;
-    padding: 0 20px;
+    padding: 0 10px;
+    text-align: center;
 }
 
 .menu nav ul li a, .menu nav ul li span {
@@ -97,31 +97,50 @@ header {
     padding: 4px 4px;
     text-transform: lowercase;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .menu nav ul li a:hover {
     color: #dc5263;
 }
 
-.menu nav ul li ul {
+.menu nav ul li:hover > .submenu {
+    display: block !important;
+}
+
+.menu nav ul li:hover > .writers-menu{
+    display: flex !important;
+}
+
+.submenu {
     position: absolute;
-    display: flex;
-    align-content: left;
-    justify-content: center;
-    flex-direction: column;
+    display: none !important;
+    background-color: white;
+    margin: 0 !important;
 }
 
-.menu nav ul li:hover ul {
-    display: flex;
+.writers-menu {
+    position: absolute;
+    max-height: 200px;
+    max-width: 100px;
+    display: none;
+    justify-content: end;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
-.menu nav ul li ul {
-    padding: 0;
+.submenu li {
+    text-align: center;
+    display: block !important;
+    margin: 2px;
+    padding: 0 !important;
+
 }
 
-.menu nav ul li ul li {
-    padding: 0;
-}
+ .writers-menu a {
+    text-transform: uppercase !important;
+ 
+ }
 
 // POSTS ========================
 
